@@ -17,7 +17,7 @@ function tinhDiem(){
     var diemTong = 0;
     diemTong = Area + doiTuong + diemThuNhat + diemThuHai + diemThuBa;
     if (diemThuNhat==0 || diemThuHai==0 || diemThuBa==0) {
-        domID("result").innerHTML = `Bạn đã rớt.Do có điểm nhỏ hơn hoặc bằng 0`
+        domID("result").innerHTML = `Bạn đã rớt.Do có điểm bằng 0`
     }else if(diemTong >= diemChuan){
        domID("result").innerHTML =`Bạn đã đậu . Tổng điểm : ${diemTong}`; 
     }else{
@@ -87,7 +87,7 @@ function Sum(so1,so2,so3,so4,so5){
             personalTax = taxSum(60,60,90,174,240,336,(incomeTaxes-960));
         }
 
-        domID("result_tienThue").innerHTML = `Họ tên: ${hoVaTen} ; Tiền thuế thu nhập cá nhân: ${personalTax.toLocaleString('vi-VN')} VND`;
+        domID("result_tienThue").innerHTML = `Họ tên: ${hoVaTen} ; Tiền thuế thu nhập cá nhân: ${personalTax.toLocaleString()} VND`;
     }
 
 
@@ -107,7 +107,7 @@ function Sum(so1,so2,so3,so4,so5){
     domID("btnTinhTienCap").onclick = function(){
         var guestName = domID("maKH").value;
         var soKenhCC = domID("soKenh").value*1;
-        var connection = domID("soKetNoi").value;
+        var connection = domID("soKetNoi").value*1;
         var guestOption = domID("chonLoaiKH").value;
         var tienCap = 0;
         if (guestOption == 0){   //Nhà dân
@@ -120,7 +120,7 @@ function Sum(so1,so2,so3,so4,so5){
             }
         }
         
-        domID("result_tienCap").innerHTML = `Mã khách hàng: ${guestName} ; Tiền cáp:$ ${tienCap.toLocaleString('en-IN')} `
+        domID("result_tienCap").innerHTML = `Mã khách hàng: ${guestName} ; Tiền cáp: $${tienCap.toLocaleString()} `
     }
 
 
