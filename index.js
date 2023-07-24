@@ -66,35 +66,32 @@ function Sum(so1,so2,so3,so4,so5){
 
         }else if(incomeTaxes>60e+6 && incomeTaxes<=120e+6){
 
-            personalTax = taxSum(60,(incomeTaxes-60),0,0,0,0,0);
+            personalTax = incomeTaxes*0.1;
 
         }else if (incomeTaxes>120e+6 && incomeTaxes<=210e+6){
 
-            personalTax = taxSum(60,60,(incomeTaxes-120),0,0,0,0);
+            personalTax = incomeTaxes*0.15 ;
 
         }else if (incomeTaxes>210e+6 && incomeTaxes<=384e+6){
 
-            personalTax = taxSum(60,60,90,(incomeTaxes-210),0,0,0);
+            personalTax = incomeTaxes*0.2;
 
         }else if (incomeTaxes>384e+6 && incomeTaxes<=624e+6){
 
-            personalTax = taxSum(60,60,90,174,(incomeTaxes - 384),0,0);
+            personalTax = incomeTaxes*0.25;
 
         }else if (incomeTaxes>624e+6 && incomeTaxes<=960e+6){
 
-            personalTax = taxSum(60,60,90,174,240,(incomeTaxes-624),0);
+            personalTax = incomeTaxes*0.3;
         }else{
-            personalTax = taxSum(60,60,90,174,240,336,(incomeTaxes-960));
+            personalTax = incomeTaxes*0.35;
         }
 
         domID("result_tienThue").innerHTML = `Họ tên: ${hoVaTen} ; Tiền thuế thu nhập cá nhân: ${personalTax.toLocaleString()} VND`;
     }
 
 
-    function taxSum(so1,so2,so3,so4,so5,so6,so7){
-        var sum = (so1*0.05 + so2*0.1 +so3*0.15 + so4*0.2 +so5*0.25 +so6*0.3 +so7*0.35)*1000000;
-        return sum;
-    }
+    
     // Bài tập 4
     function change(){
       var x =  domID("chonLoaiKH").value ;
